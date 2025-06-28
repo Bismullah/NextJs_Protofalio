@@ -15,11 +15,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-950 relative overflow-hidden">
+    <footer className="bg-slate-800 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10">
@@ -35,10 +35,10 @@ export default function Footer() {
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-2xl font-bold font-playfair gradient-text mb-4">
+                  <h3 className="text-2xl font-bold font-playfair text-white mb-4">
                     Bismullah Wafadar
                   </h3>
-                  <p className="text-white/70 mb-6 max-w-md leading-relaxed">
+                  <p className="text-slate-300 mb-6 max-w-md leading-relaxed">
                     Frontend Developer passionate about creating exceptional digital experiences 
                     and building the future of web technology, one line of code at a time.
                   </p>
@@ -51,9 +51,9 @@ export default function Footer() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                         viewport={{ once: true }}
-                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        whileHover={{ scale: 1.1, y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-all duration-300 border border-white/20 hover:border-white/40"
+                        className="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 border border-slate-600 hover:border-slate-500"
                         aria-label={social.label}
                       >
                         <social.icon size={20} />
@@ -82,7 +82,7 @@ export default function Footer() {
                       <motion.a
                         href={link.href}
                         whileHover={{ x: 5 }}
-                        className="text-white/60 hover:text-white transition-all duration-300 block"
+                        className="text-slate-400 hover:text-white transition-all duration-300 block"
                       >
                         {link.name}
                       </motion.a>
@@ -100,13 +100,13 @@ export default function Footer() {
               >
                 <h4 className="text-white font-semibold mb-4">Get In Touch</h4>
                 <div className="space-y-3">
-                  <p className="text-white/60 text-sm">
+                  <p className="text-slate-400 text-sm">
                     Ready to work together?
                   </p>
                   <motion.a
                     href="mailto:Bismullahwafadar5@gmail.com"
-                    whileHover={{ scale: 1.05 }}
-                    className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white text-sm font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg"
                   >
                     Send Message
                   </motion.a>
@@ -115,7 +115,7 @@ export default function Footer() {
             </div>
 
             {/* Divider */}
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"></div>
+            <div className="w-full h-px bg-slate-600 mb-8"></div>
 
             {/* Bottom Section */}
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -124,10 +124,10 @@ export default function Footer() {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-white/60 text-sm flex items-center gap-2"
+                className="text-slate-400 text-sm flex items-center gap-2"
               >
                 &copy; {new Date().getFullYear()} Bismullah Wafadar. Made with 
-                <Heart size={16} className="text-red-500 animate-pulse" />
+                <Heart size={16} className="text-red-500" />
                 in Afghanistan
               </motion.p>
 
@@ -139,7 +139,7 @@ export default function Footer() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-all duration-300 border border-white/20 hover:border-white/40"
+                className="w-10 h-10 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 border border-slate-600 hover:border-slate-500"
                 aria-label="Scroll to top"
               >
                 <ArrowUp size={18} />
@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Accent */}
-        <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+        <div className="h-1 bg-blue-600"></div>
       </div>
     </footer>
   );

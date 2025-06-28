@@ -28,11 +28,11 @@ export default function AboutMe() {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 md:px-16 bg-slate-900 relative overflow-hidden">
+    <section id="about" className="py-24 px-6 md:px-16 bg-slate-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100 rounded-full blur-3xl opacity-20"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -43,10 +43,10 @@ export default function AboutMe() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-playfair gradient-text">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-playfair text-slate-800">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -57,18 +57,18 @@ export default function AboutMe() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="glass-effect rounded-2xl p-8 border border-white/10">
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-6">
-                My name is <span className="text-white font-semibold gradient-text">Bismullah Wafadar</span>, 
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
+              <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-6">
+                My name is <span className="text-blue-600 font-semibold">Bismullah Wafadar</span>, 
                 a passionate frontend developer from Afghanistan with a deep commitment to crafting exceptional digital experiences.
               </p>
               
-              <p className="text-lg text-white/80 leading-relaxed mb-6">
+              <p className="text-lg text-slate-600 leading-relaxed mb-6">
                 I specialize in building responsive, performant, and accessible web applications using cutting-edge technologies like 
-                <span className="text-blue-300 font-medium"> React, Next.js, TypeScript, and Tailwind CSS</span>.
+                <span className="text-blue-600 font-medium"> React, Next.js, TypeScript, and Tailwind CSS</span>.
               </p>
 
-              <p className="text-base text-white/70 leading-relaxed">
+              <p className="text-base text-slate-500 leading-relaxed">
                 My mission extends beyond code – I'm dedicated to building impactful digital products and sharing knowledge 
                 with aspiring developers, especially in underrepresented communities. Currently expanding my expertise in 
                 mobile development and IoT technologies.
@@ -90,18 +90,18 @@ export default function AboutMe() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 + 0.6 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="glass-effect rounded-xl p-6 border border-white/10 hover:border-blue-500/30 transition-all duration-300 group"
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="bg-white rounded-xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <feature.icon size={24} className="text-white" />
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                <h3 className="text-lg font-semibold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-white/70 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
@@ -116,13 +116,13 @@ export default function AboutMe() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-4 glass-effect rounded-full px-8 py-4 border border-white/10">
+          <div className="inline-flex items-center gap-4 bg-white rounded-full px-8 py-4 shadow-md border border-slate-200">
             <div className="flex -space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-2 border-white"></div>
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-2 border-white"></div>
-              <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-red-500 rounded-full border-2 border-white"></div>
+              <div className="w-8 h-8 bg-blue-500 rounded-full border-2 border-white"></div>
+              <div className="w-8 h-8 bg-cyan-500 rounded-full border-2 border-white"></div>
+              <div className="w-8 h-8 bg-indigo-500 rounded-full border-2 border-white"></div>
             </div>
-            <span className="text-white/80 font-medium">Building the future, one line of code at a time</span>
+            <span className="text-slate-600 font-medium">Building the future, one line of code at a time</span>
           </div>
         </motion.div>
       </div>
