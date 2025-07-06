@@ -9,15 +9,15 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   return (
     <>
-    <Navbar />
-    <main>
-      <Hero name="Bismillah" title="Frontend Developer passionate about building fast and modern web apps." />
-      <AboutMe />
-      <Projects />
-      <Skills />
-      <Contact />
-      <Footer />
-    </main>
+      <Navbar />
+      <main>
+        <Hero name="Bismillah" title="Frontend Developer passionate about building fast and modern web apps." />
+        <AboutMe />
+        <Projects />
+        <Skills />
+        <Contact />
+        <Footer />
+      </main>
     </>
   );
 }

@@ -1,12 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Code2, 
-  Palette, 
-  Database, 
-  Smartphone, 
-  Globe, 
+import {
+  Code2,
+  Palette,
+  Database,
+  Globe,
   Zap,
   Layers,
   GitBranch,
