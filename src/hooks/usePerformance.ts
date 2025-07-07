@@ -229,19 +229,22 @@ export const useNetworkStatus = () => {
     // Get connection type if available
     if ('connection' in navigator) {
       const connection = (navigator as { connection?: { effectiveType?: string; addEventListener: (event: string, handler: () => void) => void; removeEventListener: (event: string, handler: () => void) => void } }).connection;
-      setConnectionType(connection.effectiveType || 'unknown');
 
-      const handleConnectionChange = () => {
+      if (connection) {
         setConnectionType(connection.effectiveType || 'unknown');
-      };
 
-      connection.addEventListener('change', handleConnectionChange);
+        const handleConnectionChange = () => {
+          setConnectionType(connection.effectiveType || 'unknown');
+        };
 
-      return () => {
-        window.removeEventListener('online', handleOnline);
-        window.removeEventListener('offline', handleOffline);
-        connection.removeEventListener('change', handleConnectionChange);
-      };
+        connection.addEventListener('change', handleConnectionChange);
+
+        return () => {
+          window.removeEventListener('online', handleOnline);
+          window.removeEventListener('offline', handleOffline);
+          connection.removeEventListener('change', handleConnectionChange);
+        };
+      }
     }
 
     return () => {
@@ -265,11 +268,13 @@ export const useMemoryUsage = () => {
     const updateMemoryInfo = () => {
       if ('memory' in performance) {
         const memory = (performance as { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } }).memory;
-        setMemoryInfo({
-          usedJSHeapSize: memory.usedJSHeapSize,
-          totalJSHeapSize: memory.totalJSHeapSize,
-          jsHeapSizeLimit: memory.jsHeapSizeLimit,
-        });
+        if (memory) {
+          setMemoryInfo({
+            usedJSHeapSize: memory.usedJSHeapSize,
+            totalJSHeapSize: memory.totalJSHeapSize,
+            jsHeapSizeLimit: memory.jsHeapSizeLimit,
+          });
+        }
       }
     };
 
@@ -293,26 +298,32 @@ export const useBatteryStatus = () => {
 
   useEffect(() => {
     if ('getBattery' in navigator) {
-      (navigator as { getBattery?: () => Promise<{ level: number; charging: boolean; chargingTime: number; dischargingTime: number; addEventListener: (event: string, handler: () => void) => void; removeEventListener: (event: string, handler: () => void) => void }> }).getBattery?.().then((battery) => {
-        const updateBatteryInfo = () => {
-          setBatteryInfo({
-            level: battery.level,
-            charging: battery.charging,
-            chargingTime: battery.chargingTime,
-            dischargingTime: battery.dischargingTime,
-          });
-        };
+      const getBattery = (navigator as { getBattery?: () => Promise<{ level: number; charging: boolean; chargingTime: number; dischargingTime: number; addEventListener: (event: string, handler: () => void) => void; removeEventListener: (event: string, handler: () => void) => void }> }).getBattery;
 
-        updateBatteryInfo();
+      if (getBattery) {
+        getBattery().then((battery) => {
+          const updateBatteryInfo = () => {
+            setBatteryInfo({
+              level: battery.level,
+              charging: battery.charging,
+              chargingTime: battery.chargingTime,
+              dischargingTime: battery.dischargingTime,
+            });
+          };
 
-        battery.addEventListener('chargingchange', updateBatteryInfo);
-        battery.addEventListener('levelchange', updateBatteryInfo);
+          updateBatteryInfo();
 
-        return () => {
-          battery.removeEventListener('chargingchange', updateBatteryInfo);
-          battery.removeEventListener('levelchange', updateBatteryInfo);
-        };
-      });
+          battery.addEventListener('chargingchange', updateBatteryInfo);
+          battery.addEventListener('levelchange', updateBatteryInfo);
+
+          return () => {
+            battery.removeEventListener('chargingchange', updateBatteryInfo);
+            battery.removeEventListener('levelchange', updateBatteryInfo);
+          };
+        }).catch(() => {
+          // Battery API not supported or failed
+        });
+      }
     }
   }, []);
 
