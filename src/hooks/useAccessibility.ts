@@ -59,7 +59,7 @@ export const useFocusTrap = (isActive: boolean) => {
 
 // Hook for keyboard navigation
 export const useKeyboardNavigation = (
-  items: any[],
+  items: unknown[],
   onSelect?: (index: number) => void,
   isActive: boolean = true
 ) => {
@@ -197,7 +197,7 @@ export const useAriaAttributes = () => {
       role?: string;
     }
   ) => {
-    const props: Record<string, any> = {};
+    const props: Record<string, string | boolean | undefined> = {};
 
     if (options.label) props['aria-label'] = options.label;
     if (options.labelledBy) props['aria-labelledby'] = options.labelledBy;

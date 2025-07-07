@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { useLazyImage } from '@/hooks/usePerformance';
 
@@ -107,18 +108,16 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   }
 
   return (
-    <div ref={priority ? undefined : elementRef} className={containerClasses}>
+    <div ref={priority ? undefined : elementRef as React.RefObject<HTMLDivElement>} className={containerClasses}>
       {/* Placeholder/Blur */}
       {(blurDataURL || placeholder) && !imageLoaded && (
         <div className="absolute inset-0">
           {blurDataURL ? (
-            <img
+            <Image
               src={blurDataURL}
               alt=""
-              className={cn(
-                'w-full h-full object-cover filter blur-sm scale-110',
-                fill && 'absolute inset-0'
-              )}
+              fill
+              className="object-cover filter blur-sm scale-110"
               aria-hidden="true"
             />
           ) : (

@@ -1,23 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Send, MapPin, Clock, CheckCircle } from "lucide-react";
-import Button from "@/components/ui/Button";
-import Input from "@/components/ui/Input";
-import Card, { CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
-import { isValidEmail } from "@/lib/utils";
+import { Mail, MessageCircle, Send, MapPin, Clock } from "lucide-react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const contactInfo = [
     {
@@ -49,63 +35,7 @@ export default function Contact() {
     purple: "bg-purple-600"
   };
 
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!isValidEmail(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters long';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
-    if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: '' }));
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-
-    try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-
-      // Reset success state after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (error) {
-      console.error('Form submission error:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <section id="contact" className="py-24 px-6 md:px-16 bg-white relative overflow-hidden">

@@ -34,7 +34,7 @@ export function generateId(): string {
 /**
  * Utility function to debounce function calls
  */
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -48,7 +48,7 @@ export function debounce<T extends (...args: any[]) => any>(
 /**
  * Utility function to throttle function calls
  */
-export function throttle<T extends (...args: any[]) => any>(
+export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {
@@ -96,7 +96,7 @@ export async function copyToClipboard(text: string): Promise<boolean> {
   try {
     await navigator.clipboard.writeText(text);
     return true;
-  } catch (err) {
+  } catch {
     // Fallback for older browsers
     const textArea = document.createElement('textarea');
     textArea.value = text;
@@ -107,7 +107,7 @@ export async function copyToClipboard(text: string): Promise<boolean> {
       document.execCommand('copy');
       document.body.removeChild(textArea);
       return true;
-    } catch (err) {
+    } catch {
       document.body.removeChild(textArea);
       return false;
     }

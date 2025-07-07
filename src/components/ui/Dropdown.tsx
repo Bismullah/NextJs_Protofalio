@@ -47,7 +47,6 @@ const Dropdown: React.FC<DropdownProps> = ({
   const searchRef = useRef<HTMLInputElement>(null);
 
   const { generateId, createAriaProps } = useAriaAttributes();
-  const dropdownId = generateId('dropdown');
   const listboxId = generateId('listbox');
 
   // Filter options based on search term
@@ -57,7 +56,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       )
     : options;
 
-  const { activeIndex, setActiveIndex } = useKeyboardNavigation(
+  const { activeIndex } = useKeyboardNavigation(
     filteredOptions,
     (index) => {
       const option = filteredOptions[index];

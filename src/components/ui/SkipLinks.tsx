@@ -58,7 +58,7 @@ const SkipLinks: React.FC<SkipLinksProps> = ({
           >
             <nav aria-label="Skip navigation links">
               <ul className="flex flex-col p-2 space-y-1">
-                {links.map((link, index) => (
+                {links.map((link) => (
                   <li key={link.href}>
                     <a
                       href={link.href}

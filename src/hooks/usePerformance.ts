@@ -83,7 +83,7 @@ export const useDebounce = <T>(value: T, delay: number): T => {
 };
 
 // Hook for throttling function calls
-export const useThrottle = <T extends (...args: any[]) => any>(
+export const useThrottle = <T extends (...args: unknown[]) => unknown>(
   callback: T,
   delay: number
 ): T => {
@@ -125,7 +125,7 @@ export const usePerformanceMetrics = () => {
     const observer = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
         if (entry.entryType === 'first-input') {
-          const fid = entry.processingStart - entry.startTime;
+          const fid = (entry as PerformanceEventTiming).processingStart - entry.startTime;
           setMetrics(prev => ({
             ...prev,
             interactionTime: fid,
@@ -228,7 +228,7 @@ export const useNetworkStatus = () => {
 
     // Get connection type if available
     if ('connection' in navigator) {
-      const connection = (navigator as any).connection;
+      const connection = (navigator as { connection?: { effectiveType?: string; addEventListener: (event: string, handler: () => void) => void; removeEventListener: (event: string, handler: () => void) => void } }).connection;
       setConnectionType(connection.effectiveType || 'unknown');
 
       const handleConnectionChange = () => {
@@ -264,7 +264,7 @@ export const useMemoryUsage = () => {
   useEffect(() => {
     const updateMemoryInfo = () => {
       if ('memory' in performance) {
-        const memory = (performance as any).memory;
+        const memory = (performance as { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } }).memory;
         setMemoryInfo({
           usedJSHeapSize: memory.usedJSHeapSize,
           totalJSHeapSize: memory.totalJSHeapSize,
@@ -293,7 +293,7 @@ export const useBatteryStatus = () => {
 
   useEffect(() => {
     if ('getBattery' in navigator) {
-      (navigator as any).getBattery().then((battery: any) => {
+      (navigator as { getBattery?: () => Promise<{ level: number; charging: boolean; chargingTime: number; dischargingTime: number; addEventListener: (event: string, handler: () => void) => void; removeEventListener: (event: string, handler: () => void) => void }> }).getBattery?.().then((battery) => {
         const updateBatteryInfo = () => {
           setBatteryInfo({
             level: battery.level,

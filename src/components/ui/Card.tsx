@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { componentVariants, type CardVariant, type CardPadding } from '@/lib/design-tokens';
 
@@ -169,10 +170,11 @@ export const CardImage: React.FC<CardImageProps> = ({
       aspectClasses[aspectRatio],
       className
     )}>
-      <img
+      <Image
         src={src}
         alt={alt}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+        fill
+        className="object-cover transition-transform duration-300 hover:scale-105"
       />
     </div>
   );

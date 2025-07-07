@@ -9,11 +9,8 @@ import {
   Zap,
   Layers,
   GitBranch,
-  Monitor,
-  Cpu
+  Monitor
 } from "lucide-react";
-import { SkillBadge } from "@/components/ui/Badge";
-import Card, { CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 
 const skillCategories = [
   {

@@ -113,15 +113,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             </div>
           )}
 
-          <motion.input
+          <input
             ref={ref}
             type={inputType}
             className={inputClasses}
             disabled={disabled}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
-            whileFocus={{ scale: 1.01 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             {...props}
           />
 

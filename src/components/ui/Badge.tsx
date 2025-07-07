@@ -116,7 +116,7 @@ export const StatusBadge: React.FC<{
 
   return (
     <Badge
-      variant={config.color as any}
+      variant={config.color as 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'outline'}
       size={size}
       icon={<span className="text-current">{config.icon}</span>}
     >
@@ -189,7 +189,7 @@ export const TrendBadge: React.FC<{
 
   return (
     <Badge
-      variant={config.color as any}
+      variant={config.color as 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'outline'}
       size={size}
       icon={<span className="text-current font-bold">{config.icon}</span>}
     >
