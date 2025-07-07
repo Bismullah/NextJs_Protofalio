@@ -1,0 +1,119 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 1000
+>>
+stream
+BT
+/F1 16 Tf
+50 750 Td
+(BISMULLAH WAFADAR) Tj
+0 -30 Td
+/F1 12 Tf
+(Frontend Developer | React & Next.js Specialist) Tj
+0 -20 Td
+(Email: Bismullahwafadar5@gmail.com) Tj
+0 -20 Td
+(Location: Afghanistan (Remote Available)) Tj
+0 -40 Td
+/F1 14 Tf
+(PROFESSIONAL SUMMARY) Tj
+0 -20 Td
+/F1 10 Tf
+(Results-driven Frontend Developer with 3+ years of experience building) Tj
+0 -15 Td
+(scalable web applications. Expert in React, Next.js, TypeScript, and) Tj
+0 -15 Td
+(modern web technologies. Proven track record of delivering high-) Tj
+0 -15 Td
+(performance applications that improve user engagement.) Tj
+0 -30 Td
+/F1 14 Tf
+(TECHNICAL SKILLS) Tj
+0 -20 Td
+/F1 10 Tf
+(Frontend: React.js, Next.js, TypeScript, JavaScript (ES6+)) Tj
+0 -15 Td
+(Styling: Tailwind CSS, CSS3, Sass/SCSS, Framer Motion) Tj
+0 -15 Td
+(Tools: Git, GitHub, Vercel, VS Code, Webpack, Vite) Tj
+0 -15 Td
+(Backend: Node.js, MongoDB, REST APIs, Firebase) Tj
+0 -30 Td
+/F1 14 Tf
+(EXPERIENCE) Tj
+0 -20 Td
+/F1 12 Tf
+(Frontend Developer - Freelance) Tj
+0 -15 Td
+/F1 10 Tf
+(2021 - Present) Tj
+0 -15 Td
+(• Developed 25+ responsive web applications using React and Next.js) Tj
+0 -15 Td
+(• Improved application performance by 40% through optimization) Tj
+0 -15 Td
+(• Collaborated with cross-functional teams on project delivery) Tj
+0 -30 Td
+/F1 14 Tf
+(EDUCATION) Tj
+0 -20 Td
+/F1 10 Tf
+(Self-taught Developer with continuous learning in modern web technologies) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000274 00000 n 
+0000001326 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+1404
+%%EOF

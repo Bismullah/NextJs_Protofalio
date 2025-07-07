@@ -12,65 +12,67 @@ import {
   Monitor,
   Cpu
 } from "lucide-react";
+import { SkillBadge } from "@/components/ui/Badge";
+import Card, { CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 
 const skillCategories = [
   {
-    title: "Frontend Development",
+    title: "Frontend Frameworks",
     icon: Code2,
     color: "blue",
     skills: [
-      { name: "React", level: 95 },
-      { name: "Next.js", level: 90 },
-      { name: "TypeScript", level: 88 },
-      { name: "JavaScript", level: 95 }
+      { name: "React.js", level: 95 },
+      { name: "Next.js", level: 92 },
+      { name: "TypeScript", level: 90 },
+      { name: "JavaScript (ES6+)", level: 95 }
     ]
   },
   {
-    title: "Styling & Design",
+    title: "Styling & UI/UX",
     icon: Palette,
     color: "purple",
     skills: [
-      { name: "Tailwind CSS", level: 92 },
-      { name: "CSS3", level: 90 },
-      { name: "Sass/SCSS", level: 85 },
-      { name: "Framer Motion", level: 80 }
+      { name: "Tailwind CSS", level: 95 },
+      { name: "CSS3 & Flexbox/Grid", level: 92 },
+      { name: "Sass/SCSS", level: 88 },
+      { name: "Framer Motion", level: 85 }
     ]
   },
   {
-    title: "Tools & Workflow",
+    title: "Development Tools",
     icon: GitBranch,
     color: "green",
     skills: [
-      { name: "Git & GitHub", level: 88 },
-      { name: "Vercel", level: 85 },
+      { name: "Git & GitHub", level: 92 },
+      { name: "Vercel & Netlify", level: 88 },
       { name: "VS Code", level: 95 },
-      { name: "npm/yarn", level: 90 }
+      { name: "Webpack & Vite", level: 82 }
     ]
   },
   {
-    title: "Emerging Technologies",
-    icon: Cpu,
+    title: "Backend & Database",
+    icon: Database,
     color: "orange",
     skills: [
-      { name: "Arduino/IoT", level: 75 },
-      { name: "WordPress", level: 80 },
-      { name: "Mobile Dev", level: 70 },
-      { name: "Web3", level: 65 }
+      { name: "Node.js", level: 78 },
+      { name: "MongoDB", level: 75 },
+      { name: "REST APIs", level: 85 },
+      { name: "Firebase", level: 80 }
     ]
   }
 ];
 
 const technologies = [
-  { name: "HTML5", icon: Globe, color: "text-orange-600" },
-  { name: "CSS3", icon: Palette, color: "text-blue-600" },
-  { name: "JavaScript", icon: Zap, color: "text-yellow-600" },
-  { name: "TypeScript", icon: Code2, color: "text-blue-700" },
-  { name: "React", icon: Layers, color: "text-cyan-600" },
+  { name: "React.js", icon: Layers, color: "text-cyan-600" },
   { name: "Next.js", icon: Monitor, color: "text-slate-800" },
-  { name: "Tailwind", icon: Palette, color: "text-teal-600" },
+  { name: "TypeScript", icon: Code2, color: "text-blue-700" },
+  { name: "JavaScript", icon: Zap, color: "text-yellow-600" },
+  { name: "Tailwind CSS", icon: Palette, color: "text-teal-600" },
+  { name: "Node.js", icon: Database, color: "text-green-600" },
   { name: "Git", icon: GitBranch, color: "text-orange-700" },
-  { name: "Arduino", icon: Cpu, color: "text-green-600" },
-  { name: "WordPress", icon: Database, color: "text-blue-800" }
+  { name: "MongoDB", icon: Database, color: "text-green-700" },
+  { name: "Vercel", icon: Globe, color: "text-slate-600" },
+  { name: "Firebase", icon: Zap, color: "text-orange-600" }
 ];
 
 const colorClasses = {
@@ -98,11 +100,44 @@ const colorClasses = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 md:px-16 bg-slate-50 relative overflow-hidden">
-      {/* Background Elements */}
+    <section id="skills" className="py-24 px-6 md:px-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 relative overflow-hidden">
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-20"></div>
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 180, 270, 360]
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-full blur-3xl opacity-40"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [360, 270, 180, 90, 0]
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full blur-3xl opacity-30"
+        />
+
+        {/* Animated Grid Pattern */}
+        <motion.div
+          className="absolute inset-0 opacity-5"
+          animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: "60px 60px"
+          }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -118,7 +153,7 @@ export default function Skills() {
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            A comprehensive toolkit built through years of dedicated learning and professional experience
+            Comprehensive technical expertise across modern web development technologies and best practices
           </p>
         </motion.div>
 
@@ -127,40 +162,127 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50, rotateX: -15 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 100
+              }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 group"
+              whileHover={{
+                scale: 1.03,
+                y: -10,
+                rotateY: 5,
+                boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)"
+              }}
+              className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-slate-200/50 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`w-12 h-12 ${colorClasses[category.color as keyof typeof colorClasses].bg} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <category.icon size={24} className="text-white" />
-                </div>
-                <h3 className={`text-lg font-semibold text-slate-800 group-hover:${colorClasses[category.color as keyof typeof colorClasses].text} transition-colors duration-300`}>
-                  {category.title}
-                </h3>
-              </div>
+              {/* Animated background gradient */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 rounded-2xl"
+                transition={{ duration: 0.3 }}
+              />
 
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-700 font-medium">{skill.name}</span>
-                      <span className="text-slate-500 text-sm font-mono">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
-                        viewport={{ once: true }}
-                        className={`h-full ${colorClasses[category.color as keyof typeof colorClasses].progress} rounded-full`}
-                      />
-                    </div>
-                  </div>
-                ))}
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <motion.div
+                    className={`w-12 h-12 ${colorClasses[category.color as keyof typeof colorClasses].bg} rounded-xl flex items-center justify-center shadow-lg`}
+                    whileHover={{
+                      scale: 1.15,
+                      rotate: 360,
+                      boxShadow: "0 10px 25px rgba(59, 130, 246, 0.4)"
+                    }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <category.icon size={24} className="text-white" />
+                  </motion.div>
+                  <motion.h3
+                    className={`text-lg font-semibold text-slate-800 group-hover:${colorClasses[category.color as keyof typeof colorClasses].text} transition-colors duration-300`}
+                    whileHover={{ x: 5 }}
+                  >
+                    {category.title}
+                  </motion.h3>
+                </div>
+
+                <div className="space-y-4">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skill.name}
+                      className="space-y-2"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.1 + skillIndex * 0.1 + 0.3
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex justify-between items-center">
+                        <motion.span
+                          className="text-slate-700 font-medium"
+                          whileHover={{ color: "#3b82f6", x: 5 }}
+                        >
+                          {skill.name}
+                        </motion.span>
+                        <motion.span
+                          className="text-slate-500 text-sm font-mono bg-slate-100 px-2 py-1 rounded"
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          {skill.level}%
+                        </motion.span>
+                      </div>
+
+                      <div className="relative">
+                        <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden shadow-inner">
+                          <motion.div
+                            initial={{ width: 0, opacity: 0.7 }}
+                            whileInView={{ width: `${skill.level}%`, opacity: 1 }}
+                            transition={{
+                              duration: 1.5,
+                              delay: index * 0.1 + skillIndex * 0.1 + 0.5,
+                              ease: "easeOut"
+                            }}
+                            viewport={{ once: true }}
+                            className={`h-full ${colorClasses[category.color as keyof typeof colorClasses].progress} rounded-full relative overflow-hidden`}
+                            whileHover={{ scale: 1.02 }}
+                          >
+                            {/* Animated shine effect */}
+                            <motion.div
+                              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                              animate={{ x: ["-100%", "100%"] }}
+                              transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                repeatDelay: 3,
+                                ease: "easeInOut"
+                              }}
+                            />
+                          </motion.div>
+                        </div>
+
+                        {/* Skill level indicator */}
+                        <motion.div
+                          className="absolute top-0 bg-white rounded-full w-3 h-3 border-2 border-current shadow-md"
+                          style={{
+                            left: `${skill.level}%`,
+                            transform: "translateX(-50%)",
+                            color: colorClasses[category.color as keyof typeof colorClasses].progress.replace('bg-', '#')
+                          }}
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          transition={{
+                            duration: 0.5,
+                            delay: index * 0.1 + skillIndex * 0.1 + 1.5
+                          }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.5 }}
+                        />
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -179,17 +301,59 @@ export default function Skills() {
             {technologies.map((tech, index) => (
               <motion.div
                 key={tech.name}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                initial={{ opacity: 0, scale: 0, rotateY: -90 }}
+                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.08,
+                  type: "spring",
+                  stiffness: 200
+                }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-md border border-slate-200 hover:shadow-lg transition-all duration-300"
+                whileHover={{
+                  scale: 1.15,
+                  y: -10,
+                  rotateY: 10,
+                  boxShadow: "0 15px 30px rgba(0, 0, 0, 0.15)"
+                }}
+                className="group flex flex-col items-center gap-3 p-5 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200/50 hover:shadow-2xl transition-all duration-500 relative overflow-hidden"
               >
-                <tech.icon size={32} className={`${tech.color} group-hover:scale-110 transition-transform duration-300`} />
-                <span className="text-slate-700 text-sm font-medium group-hover:text-slate-800 transition-colors duration-300">
-                  {tech.name}
-                </span>
+                {/* Animated background on hover */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100"
+                  transition={{ duration: 0.3 }}
+                />
+
+                <div className="relative z-10 flex flex-col items-center gap-3">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.8 }}
+                    className="relative"
+                  >
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-20 blur-md"
+                      whileHover={{ scale: 1.5 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                    <tech.icon
+                      size={36}
+                      className={`${tech.color} group-hover:scale-110 transition-transform duration-300 relative z-10`}
+                    />
+                  </motion.div>
+
+                  <motion.span
+                    className="text-slate-700 text-sm font-medium group-hover:text-slate-800 transition-colors duration-300 text-center"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {tech.name}
+                  </motion.span>
+                </div>
+
+                {/* Decorative corner */}
+                <motion.div
+                  className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-br from-blue-200 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100"
+                  transition={{ duration: 0.3 }}
+                />
               </motion.div>
             ))}
           </div>
@@ -205,9 +369,9 @@ export default function Skills() {
         >
           {[
             { number: "3+", label: "Years Experience" },
-            { number: "50+", label: "Projects Completed" },
-            { number: "15+", label: "Technologies Mastered" },
-            { number: "100%", label: "Client Satisfaction" }
+            { number: "25+", label: "Projects Delivered" },
+            { number: "10+", label: "Technologies Mastered" },
+            { number: "98%", label: "Code Quality Score" }
           ].map((stat, index) => (
             <div key={stat.label} className="text-center">
               <motion.div

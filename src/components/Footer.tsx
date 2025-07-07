@@ -6,7 +6,7 @@ import { Github, Linkedin, Mail, Heart, ArrowUp } from "lucide-react";
 export default function Footer() {
   const socialLinks = [
     { icon: Github, href: "https://github.com/Bismullah", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://linkedin.com/in/bismillah-wafadar", label: "LinkedIn" },
     { icon: Mail, href: "mailto:Bismullahwafadar5@gmail.com", label: "Email" }
   ];
 
@@ -15,11 +15,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-800 relative overflow-hidden">
+    <footer id="footer" className="bg-neutral-900 dark:bg-neutral-950 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10">
@@ -38,9 +38,9 @@ export default function Footer() {
                   <h3 className="text-2xl font-bold font-playfair text-white mb-4">
                     Bismullah Wafadar
                   </h3>
-                  <p className="text-slate-300 mb-6 max-w-md leading-relaxed">
-                    Frontend Developer passionate about creating exceptional digital experiences 
-                    and building the future of web technology, one line of code at a time.
+                  <p className="text-neutral-400 mb-6 max-w-md leading-relaxed">
+                    Senior Frontend Developer specializing in React and Next.js.
+                    Delivering high-performance web applications with exceptional user experiences.
                   </p>
                   <div className="flex gap-4">
                     {socialLinks.map((social, index) => (
@@ -53,7 +53,7 @@ export default function Footer() {
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.1, y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 border border-slate-600 hover:border-slate-500"
+                        className="w-12 h-12 bg-neutral-800 hover:bg-neutral-700 rounded-full flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-300"
                         aria-label={social.label}
                       >
                         <social.icon size={20} />
@@ -82,7 +82,7 @@ export default function Footer() {
                       <motion.a
                         href={link.href}
                         whileHover={{ x: 5 }}
-                        className="text-slate-400 hover:text-white transition-all duration-300 block"
+                        className="text-neutral-400 hover:text-white transition-all duration-300 block"
                       >
                         {link.name}
                       </motion.a>
@@ -98,24 +98,24 @@ export default function Footer() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <h4 className="text-white font-semibold mb-4">Get In Touch</h4>
+                <h4 className="text-white font-semibold mb-4">Professional Contact</h4>
                 <div className="space-y-3">
-                  <p className="text-slate-400 text-sm">
-                    Ready to work together?
+                  <p className="text-neutral-400 text-sm">
+                    Open to new opportunities
                   </p>
                   <motion.a
-                    href="mailto:Bismullahwafadar5@gmail.com"
+                    href="mailto:Bismullahwafadar5@gmail.com?subject=Job Opportunity"
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+                    className="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white text-sm font-medium transition-all duration-300"
                   >
-                    Send Message
+                    Hire Me
                   </motion.a>
                 </div>
               </motion.div>
             </div>
 
             {/* Divider */}
-            <div className="w-full h-px bg-slate-600 mb-8"></div>
+            <div className="w-full h-px bg-neutral-700 mb-8"></div>
 
             {/* Bottom Section */}
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -124,10 +124,10 @@ export default function Footer() {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-slate-400 text-sm flex items-center gap-2"
+                className="text-neutral-400 text-sm flex items-center gap-2"
               >
-                &copy; {new Date().getFullYear()} Bismullah Wafadar. Made with 
-                <Heart size={16} className="text-red-500" />
+                &copy; {new Date().getFullYear()} Bismullah Wafadar. Made with
+                <Heart size={16} className="text-purple-400" />
                 in Afghanistan
               </motion.p>
 
@@ -139,7 +139,7 @@ export default function Footer() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 border border-slate-600 hover:border-slate-500"
+                className="w-10 h-10 bg-neutral-800 hover:bg-neutral-700 rounded-full flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-300"
                 aria-label="Scroll to top"
               >
                 <ArrowUp size={18} />
@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Accent */}
-        <div className="h-1 bg-blue-600"></div>
+        <div className="h-1 bg-purple-600"></div>
       </div>
     </footer>
   );

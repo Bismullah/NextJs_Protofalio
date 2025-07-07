@@ -10,14 +10,14 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
-        <Hero name="Bismillah" title="Frontend Developer passionate about building fast and modern web apps." />
+      <main id="main-content" role="main">
+        <Hero name="Bismillah" title="Senior Frontend Developer | React & Next.js Specialist | Building Scalable Web Applications" />
         <AboutMe />
         <Projects />
         <Skills />
         <Contact />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
