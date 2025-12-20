@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Sparkles, Zap, Shield } from "lucide-react";
+import { ExternalLink, Github, Sparkles, Eye, Utensils } from "lucide-react";
 
 type Project = {
   title: string;
@@ -17,6 +17,28 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Eye Hospital Management System",
+    description: "Comprehensive hospital management system for eye care facilities with patient records, appointments, and medical history",
+    longDescription: "A full-featured hospital management system specifically designed for eye care facilities. This system manages patient records, appointments, medical history, doctor schedules, billing, and inventory management. Built with modern web technologies to ensure efficient operations and seamless patient care workflow.",
+    github: "https://github.com/Bismullah/eye-hospital-management",
+    live: "#",
+    tags: ["React", "Node.js", "MongoDB", "Express.js", "JWT Authentication"],
+    features: ["Patient Management", "Appointment Scheduling", "Medical Records", "Billing System"],
+    icon: Eye,
+    color: "red"
+  },
+  {
+    title: "Afghan Sofra Food Delivery Management System",
+    description: "Complete food delivery platform with order management, restaurant operations, and customer tracking",
+    longDescription: "A comprehensive food delivery management system for Afghan Sofra restaurant. The platform handles order management, restaurant operations, delivery tracking, customer management, menu management, and real-time order status updates. Designed to streamline the entire food delivery process from order placement to delivery completion.",
+    github: "https://github.com/Bismullah/afghan-sofra-delivery",
+    live: "#",
+    tags: ["React", "Node.js", "MongoDB", "Express.js", "Real-time Updates"],
+    features: ["Order Management", "Delivery Tracking", "Restaurant Dashboard", "Customer Portal"],
+    icon: Utensils,
+    color: "green"
+  },
+  {
     title: "Professional Portfolio",
     description: "Modern, performance-optimized portfolio built with Next.js 15 and TypeScript",
     longDescription: "A comprehensive portfolio website showcasing advanced frontend development skills. Built with Next.js 15, TypeScript, and Tailwind CSS, featuring server-side rendering, optimized performance (95+ Lighthouse score), and modern animations.",
@@ -26,28 +48,6 @@ const projects: Project[] = [
     features: ["95+ Lighthouse Score", "SEO Optimized", "Mobile-First Design", "Smooth Animations"],
     icon: Sparkles,
     color: "blue"
-  },
-  {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with modern payment integration",
-    longDescription: "A complete e-commerce platform built with React and Node.js, featuring user authentication, product management, shopping cart functionality, and secure payment processing.",
-    github: "https://github.com/Bismullah/ecommerce-platform",
-    live: "https://ecommerce-demo.vercel.app",
-    tags: ["React", "Node.js", "MongoDB", "Stripe API", "JWT"],
-    features: ["Payment Integration", "Admin Dashboard", "User Authentication", "Inventory Management"],
-    icon: Shield,
-    color: "green"
-  },
-  {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates",
-    longDescription: "A sophisticated task management application built with React and Firebase, featuring real-time collaboration, drag-and-drop functionality, team management, and progress tracking.",
-    github: "https://github.com/Bismullah/task-manager",
-    live: "https://taskmanager-pro.vercel.app",
-    tags: ["React", "Firebase", "Material-UI", "Real-time DB", "PWA"],
-    features: ["Real-time Collaboration", "Drag & Drop", "Team Management", "Progress Analytics"],
-    icon: Zap,
-    color: "purple"
   }
 ];
 
@@ -64,11 +64,11 @@ const colorClasses = {
     border: "border-green-200",
     hover: "hover:border-green-300"
   },
-  purple: {
-    bg: "bg-purple-600",
-    text: "text-purple-600",
-    border: "border-purple-200",
-    hover: "hover:border-purple-300"
+  red: {
+    bg: "bg-red-600",
+    text: "text-red-600",
+    border: "border-red-200",
+    hover: "hover:border-red-300"
   }
 };
 
